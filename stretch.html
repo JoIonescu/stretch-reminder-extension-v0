@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+<title>Stretch Break</title>
+
+<style>
+
+body{
+  margin:0;
+  background:#1e1e1e;
+  color:white;
+  font-family:Arial;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  text-align:center;
+}
+
+.container{
+  max-width:600px;
+  animation: pulse 5s ease-in-out infinite;
+}
+
+@keyframes pulse{
+  0%{transform:scale(1)}
+  50%{transform:scale(1.03)}
+  100%{transform:scale(1)}
+}
+
+h1{
+  font-size:42px;
+  margin-bottom:15px;
+  color:#ffd400;
+}
+
+.stretch-text{
+  font-size:22px;
+  line-height:1.5;
+  color:#dddddd;
+  margin-bottom:20px;
+  min-height:60px;
+}
+
+.timer-wrapper{
+  margin:30px auto;
+  width:220px;
+  height:220px;
+  position:relative;
+}
+
+svg{
+  transform:rotate(-90deg);
+}
+
+#timer{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  font-size:56px;
+  font-weight:bold;
+}
+
+button{
+  padding:10px 20px;
+  font-size:16px;
+  cursor:pointer;
+  border:none;
+  border-radius:6px;
+}
+
+#pauseBtn{
+  background:#2e86de;
+  color:white;
+  margin-right:10px;
+}
+
+#skipBtn{
+  background:#ff4d00;
+  color:white;
+}
+
+#snoozeBtn{
+  background:#27ae60;
+  color:white;
+  margin-right:10px;
+}
+
+#doneMessage{
+  font-size:28px;
+  color:#4CAF50;
+  display:none;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1 id="mainTitle">Time to Stretch!</h1>
+
+<div id="stretchText" class="stretch-text"></div>
+
+<div class="timer-wrapper">
+
+<svg width="220" height="220">
+
+<defs>
+<linearGradient id="grad1">
+<stop offset="0%" stop-color="#FFD400"/>
+<stop offset="100%" stop-color="#FF7A00"/>
+</linearGradient>
+</defs>
+
+<circle cx="110" cy="110" r="90" stroke="#444" stroke-width="10" fill="none"/>
+
+<circle
+id="progressCircle"
+cx="110"
+cy="110"
+r="90"
+stroke="url(#grad1)"
+stroke-width="10"
+fill="none"
+stroke-linecap="round"
+/>
+
+</svg>
+
+<div id="timer">60s</div>
+
+</div>
+
+<div id="doneMessage">
+Great job 👍<br>
+Back to work!
+</div>
+
+<div>
+
+<button id="pauseBtn">Pause</button>
+<button id="snoozeBtn">Snooze</button>
+<button id="skipBtn">Skip Break</button>
+
+</div>
+
+</div>
+
+<audio id="stretchSound">
+<source src="chime.mp3" type="audio/mpeg">
+</audio>
+
+<script src="stretch.js"></script>
+
+</body>
+</html>

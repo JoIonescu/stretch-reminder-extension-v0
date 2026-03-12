@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta charset="UTF-8">
+
+<style>
+
+body{
+  font-family: Arial;
+  width:230px;
+  padding:15px;
+  text-align:center;
+  background: linear-gradient(135deg,#1e1e1e,#2a2a2a);
+  color:white;
+}
+
+h2{
+  margin-bottom:10px;
+}
+
+button{
+  padding:8px;
+  margin:5px;
+  width:80px;
+  cursor:pointer;
+  border:none;
+  border-radius:6px;
+  background:#ffd400;
+  color:#111;
+  font-weight:bold;
+  transition:transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+button:hover{
+  transform:translateY(-1px);
+  box-shadow:0 3px 8px rgba(0,0,0,0.3);
+}
+
+button:active{
+  transform:scale(0.97);
+}
+
+select{
+  padding:5px;
+  margin-bottom:10px;
+}
+
+#countdown{
+  font-size:20px;
+  margin-top:10px;
+  font-weight:bold;
+  color:#ffd400;
+}
+
+.settings{
+  margin-top:10px;
+  font-size:13px;
+}
+
+.label{
+  margin-top:10px;
+  font-size:13px;
+  color:#979797;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<h2>Stretch Reminder</h2>
+
+<select id="interval">
+
+<option value="20">20 min</option>
+<option value="30" selected>30 min</option>
+<option value="45">45 min</option>
+<option value="60">60 min</option> </select>
+
+</select>
+
+<div class="settings">
+
+<label>
+<input type="checkbox" id="soundToggle">
+ Play sound during stretch break
+</label>
+
+</div>
+
+<br>
+
+<button id="start">Start</button>
+<button id="stop">Stop</button>
+
+<div class="label">Next stretch in:</div>
+<div id="countdown">Timer inactive</div>
+
+<script src="popup.js"></script>
+
+</body>
+
+</html>
