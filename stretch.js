@@ -66,6 +66,7 @@ const interval = setInterval(()=>{
   // hide buttons
   pauseBtn.style.display = "none";
   skipBtn.style.display = "none";
+  snoozeBtn.style.display = "none";
   document.getElementById("mainTitle").style.display = "none";
 
   // remove circle
